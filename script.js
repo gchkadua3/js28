@@ -25,20 +25,20 @@ form.addEventListener('submit', e => {
 
   if (patternForUsername.test(username)) {
     // Username is valid
-    usernameInput.classList.add('neutral');
+    usernameInput.style.border = '1px solid transparent'
     holderForFailUsername.textContent = ''
   } else {
-    usernameInput.classList.add('warning');
+    usernameInput.style.border = '1px solid red'
     holderForFailUsername.textContent = 'Username must be 3-16 characters long'
   }
 
 
   if (patternForEmail.test(email)) {
     // Email is valid
-    emailInput.classList.add('neutral');
+    emailInput.style.border = '1px solid transparent'
     holderForFailEmail.textContent = ''
   } else {
-    emailInput.classList.add('warning');
+    emailInput.style.border = '1px solid red'
     holderForFailEmail.textContent = 'Type a valid Email'
   }
 
@@ -47,15 +47,15 @@ form.addEventListener('submit', e => {
 
   if (patternForPassword.test(password)) {
     // Password is valid
-    passwordInput.classList.add('neutral');
+    passwordInput.style.border = '1px solid transparent'
     holderForFailPassword.textContent = ''
   } else {
-    passwordInput.classList.add('warning');
+    passwordInput.style.border = '1px solid red'
     holderForFailPassword.textContent = 'Password should be at least 8 characters long, and requires at least one uppercase letter and one digit'
   }
 
   if(patternForUsername.test(username) && patternForEmail.test(email) && patternForPassword.test(password)) {
-    success.textContent = ':)'
+    success.textContent = 'Success'
   }
 
 });
